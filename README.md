@@ -16,3 +16,4 @@
 <ul>
 	<li><a href="https://github.com/maksBest262626/Biatlon/blob/main/Documents/Tekhnicheskoe_zadanie_Biathlon_competition_statistics.docx">Техническое задание</a></li>
 </ul>
+[Курсовая.pdf](https://github.com/maksBest262626/Biatlon/files/6222088/default.pdf)
