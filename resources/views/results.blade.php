@@ -65,6 +65,65 @@ Results
       </div>
     </div>
 @endif
-@endsection                   <!-- /* закрываем секцию */ -->
 
- 
+@if(Request::is('results/cupOfTheWorld')) 
+<h6></h6>
+<div class="row row-cols-1 row-cols-md-2 mb-2 text-center">
+      <div class="col">
+        <!-- <div class="card mb-4 rounded-3 shadow-sm"> -->
+          <div class="card-body">
+           <form action="/results/cupOfTheWorld/1" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 1</button>
+            </form> <h1></h1>
+            <form action="/results/cupOfTheWorld/2" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 2</button>
+            </form><h1></h1>
+            <form action="/results/cupOfTheWorld/3" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 3</button>
+            </form><h1></h1>
+            <form action="/results/cupOfTheWorld/4" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 4</button>
+            </form><h1></h1>
+            <form action="/results/cupOfTheWorld/5" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 5</button>
+            </form>
+        </div>
+        <!-- </div> -->
+      </div>
+      <div class="col">
+        <!-- <div class="card mb-4 rounded-3 shadow-sm border-primary"> -->
+          <div class="card-body">
+            <form action="/results/cupOfTheWorld/6" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 6</button>
+            </form><h1></h1>
+            <form action="/results/cupOfTheWorld/7" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 7</button>
+            </form><h1></h1>
+            <form action="/results/cupOfTheWorld/8" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 8</button>
+            </form><h1></h1>
+            <form action="/results/cupOfTheWorld/9" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 9</button>
+            </form><h1></h1>
+            <form action="/results/cupOfTheWorld/10" method="post">
+            @csrf
+            <button type="submit" class="w-50 btn btn-lg btn-primary">Этап 10</button>
+            </form>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+@endif
+@if(Request::is('results/cupOfTheWorld/1'))
+
+@endif
+@endsection                   <!-- /* закрываем секцию */ -->
