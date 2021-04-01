@@ -33,6 +33,37 @@ Route::post('/results/cupOfTheWorld', function () {
     return view('results');
 });
 
+Route::post('/results/cupOfTheWorld/1', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/2', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/3', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/4', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/5', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/6', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/7', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/8', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/9', function () {
+    return view('results');
+});
+Route::post('/results/cupOfTheWorld/10', function () {
+    return view('results');
+});
+
 Route::post('/results/cupOfIBU', function () {
     return view('results');
 });
