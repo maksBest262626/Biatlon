@@ -37,7 +37,6 @@ Results
               <li>Место проведения: Поклюка, Словения</li>           
             </ul>
             <form action="/results/championatOfTheWorld" method="get">
-            @csrf
             <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Посмотреть результаты</button>
             </form>
         </div>
@@ -55,8 +54,7 @@ Results
               <li>Место проведения этапов 3-4: Осрблье, Словакия</li>
               <li>Место проведения этапа 5: Обертиллиах, Австрия</li>
             </ul>
-            <form action="/results/cupOfIBU" method="get">
-            @csrf
+            <form action="/results/cupOfIBU" method="get">    
             <button type="submit" class="w-100 btn btn-lg btn-primary">Посмотреть результаты</button>
             </form>
         </div>
@@ -108,6 +106,30 @@ Results
         
         
       </div>
+    </div>
+@endif
+
+@if(Request::is('results/cupOfIBU')) 
+<br>
+<div class="row row-cols-1 row-cols-md-1 mb-2 text-center">
+      <div class="col">
+          
+          <?php
+          $etaps = DB::table('cup_of_the_IBU')->select('etap')->distinct()->get();
+          $count = 0;
+          foreach ($etaps as $etap) {$count++;}
+         
+          for($i=0; $i<$count;$i++){
+            echo "
+            <br>
+            <div class='container text-center' align='center' ><a href='/results/cupOfIBU/{$etaps[$i]->etap}' class='btn btn-primary' align=center>
+              этап {$etaps[$i]->etap}
+            </a></div>
+            <br>";
+          }
+          ?>
+      </div>
+      
     </div>
 @endif
 

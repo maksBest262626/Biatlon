@@ -46,10 +46,35 @@ Route::get('/results/cupOfTheWorld/{id}/{type}', function($id, $type) {
     return $view;
 });
 
-Route::post('/results/cupOfIBU', function () {
+Route::get('/results/cupOfIBU', function () {
     return view('results');
 });
 
-Route::post('/results/championatOfTheWorld', function () {
-    return view('results');
+Route::get('/results/championatOfTheWorld', function () {
+    $view = view('resultsTypeChampionat');
+    $types = DB::table('championat')->select('type')->distinct()->get();
+    $view->types = $types;
+    return $view;
+});
+
+Route::get('/results/championatOfTheWorld/{type}', function($type) {
+    $view = view('resultsTableChampionat');
+    $results = DB::table('championat')->where('type',$type)->get();
+    $view->results = $results;
+    return $view;
+});
+
+Route::get('/results/cupOfIBU/{id}', function($id) {
+    $types = DB::table('cup_of_the_IBU')->where('etap',$id)->select('type')->distinct()->get();
+    $view = view('resultsTypeIBU');
+    $view->types = $types;
+    $view->etap = $id;
+    return $view;
+});
+
+Route::get('/results/cupOfIBU/{id}/{type}', function($id, $type) {
+    $view = view('resultsTableIBU');
+    $results = DB::table('cup_of_the_IBU')->where('etap',$id)->where('type',$type)->get();
+    $view->results = $results;
+    return $view;
 });
