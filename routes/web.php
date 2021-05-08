@@ -78,3 +78,15 @@ Route::get('/results/cupOfIBU/{id}/{type}', function($id, $type) {
     $view->results = $results;
     return $view;
 });
+
+Route::get('/statistics/cupOfTheWorld', function () {
+    return view('statistics');
+});
+
+Route::get('/statistics/cupOfIBU', function () {
+    return view('statistics');
+});
+
+Route::get('/statistics/championatOfTheWorld', function () {
+    return view('statistics');
+});
