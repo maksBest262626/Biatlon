@@ -11,7 +11,9 @@
 </head>
 <body>
     @include('includes.header')
+    <div class="container">
     @yield('content') <!--Создание точки в которую можно будет вставлять код  -->
+    </div>
     @include('includes.footer') 
 </body>
 </html>

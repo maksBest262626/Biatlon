@@ -29,45 +29,64 @@ Route::get('/statistics', function () {
     return view('statistics');
 })->name('statistics');
 
-Route::post('/results/cupOfTheWorld', function () {
+Route::get('/results/cupOfTheWorld', function () {
     return view('results');
 });
 
-Route::post('/results/cupOfTheWorld/1', function () {
-    return view('results');
+Route::get('/results/cupOfTheWorld/{id}', function($id) {
+    $view = view('resultsType');
+    $view->etap = $id;
+    return $view;
 });
-Route::post('/results/cupOfTheWorld/2', function () {
-    return view('results');
+
+Route::get('/results/cupOfTheWorld/{id}/{type}', function($id, $type) {
+    $view = view('resultsTable');
+    $results = DB::table('cup_of_the_world')->where('etap',$id)->where('type',$type)->get();
+    $view->results = $results;
+    return $view;
 });
-Route::post('/results/cupOfTheWorld/3', function () {
-    return view('results');
-});
-Route::post('/results/cupOfTheWorld/4', function () {
-    return view('results');
-});
-Route::post('/results/cupOfTheWorld/5', function () {
-    return view('results');
-});
-Route::post('/results/cupOfTheWorld/6', function () {
-    return view('results');
-});
-Route::post('/results/cupOfTheWorld/7', function () {
-    return view('results');
-});
-Route::post('/results/cupOfTheWorld/8', function () {
-    return view('results');
-});
-Route::post('/results/cupOfTheWorld/9', function () {
-    return view('results');
-});
-Route::post('/results/cupOfTheWorld/10', function () {
+
+Route::get('/results/cupOfIBU', function () {
     return view('results');
 });
 
-Route::post('/results/cupOfIBU', function () {
-    return view('results');
+Route::get('/results/championatOfTheWorld', function () {
+    $view = view('resultsTypeChampionat');
+    $types = DB::table('championat')->select('type')->distinct()->get();
+    $view->types = $types;
+    return $view;
 });
 
-Route::post('/results/championatOfTheWorld', function () {
-    return view('results');
+Route::get('/results/championatOfTheWorld/{type}', function($type) {
+    $view = view('resultsTableChampionat');
+    $results = DB::table('championat')->where('type',$type)->get();
+    $view->results = $results;
+    return $view;
+});
+
+Route::get('/results/cupOfIBU/{id}', function($id) {
+    $types = DB::table('cup_of_the_IBU')->where('etap',$id)->select('type')->distinct()->get();
+    $view = view('resultsTypeIBU');
+    $view->types = $types;
+    $view->etap = $id;
+    return $view;
+});
+
+Route::get('/results/cupOfIBU/{id}/{type}', function($id, $type) {
+    $view = view('resultsTableIBU');
+    $results = DB::table('cup_of_the_IBU')->where('etap',$id)->where('type',$type)->get();
+    $view->results = $results;
+    return $view;
+});
+
+Route::get('/statistics/cupOfTheWorld', function () {
+    return view('statistics');
+});
+
+Route::get('/statistics/cupOfIBU', function () {
+    return view('statistics');
+});
+
+Route::get('/statistics/championatOfTheWorld', function () {
+    return view('statistics');
 });
