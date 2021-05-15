@@ -90,3 +90,365 @@ Route::get('/statistics/cupOfIBU', function () {
 Route::get('/statistics/championatOfTheWorld', function () {
     return view('statistics');
 });
+
+Route::get('/statistics/cupOfTheWorld/all', function () {
+    $view = view('statisticsTable');
+    $results = DB::table('cup_of_the_world')->
+    select('country', 'position',  DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where('position',1)->
+    groupBy('country','position')->
+    orderBy('position','asc')->
+    orderBy('countPos','desc')->
+    get();
+    $view->results = $results;
+
+    $resultsCountry = DB::table('cup_of_the_world')->
+    select('country', 'position', DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where('position', '<=', 3)->
+    groupBy('country','position')->
+    orderBy('country','asc')->
+    orderBy('position','asc')->
+    get();
+    $view->resultsCountry = $resultsCountry;
+    return $view;
+});
+
+Route::get('/statistics/cupOfTheWorld/male', function () {
+    $view = view('statisticsTable');
+    $results = DB::table('cup_of_the_world')->
+    select('country', 'position',  DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position',1)
+              ->where('type', '=', 'male20');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male10sprint');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male125gonka');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male4on75');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male15mass');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male20gonka');
+            })
+            ->
+    groupBy('country','position')->
+    orderBy('position','asc')->
+    orderBy('countPos','desc')->
+    get();
+    $view->results = $results;
+
+    $resultsCountry = DB::table('cup_of_the_world')->
+    select('country', 'position', DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position', '<=', 3)
+              ->where('type', '=', 'male20');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male10sprint');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male125gonka');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male4on75');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male15mass');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male20gonka');
+            })
+            ->
+    groupBy('country','position')->
+    orderBy('country','asc')->
+    orderBy('position','asc')->
+    get();
+    $view->resultsCountry = $resultsCountry;
+    return $view;
+});
+
+Route::get('/statistics/cupOfTheWorld/female', function () {
+    $view = view('statisticsTable');
+    $results = DB::table('cup_of_the_world')->
+    select('country', 'position',  DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position',1)
+              ->where('type', '=', 'female15');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female4on6');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female10gonka');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female75sprint');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female125mass');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female15gonka');
+            })
+            ->
+    groupBy('country','position')->
+    orderBy('position','asc')->
+    orderBy('countPos','desc')->
+    get();
+    $view->results = $results;
+
+    $resultsCountry = DB::table('cup_of_the_world')->
+    select('country', 'position', DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position','<=' ,3)
+              ->where('type', '=', 'female15');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female4on6');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female10gonka');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female75sprint');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female125mass');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female15gonka');
+            })
+            ->
+    groupBy('country','position')->
+    orderBy('country','asc')->
+    orderBy('position','asc')->
+    get();
+    $view->resultsCountry = $resultsCountry;
+    return $view;
+});
+
+Route::get('/statistics/cupOfTheWorld/femaleOne', function () {
+    $view = view('statisticsTable');
+    $results = DB::table('cup_of_the_world')->
+    select( 'name', 'position',  DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position',1)
+              ->where('type', '=', 'female15');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female10gonka');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female75sprint');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female125mass');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'female15gonka');
+            })
+            ->
+    groupBy('name','position')->
+    orderBy('position','asc')->
+    orderBy('countPos','desc')->
+    get();
+    $view->results = $results;
+
+    $resultsCountry = DB::table('cup_of_the_world')->
+    select('name', 'position','country', DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position','<=' ,3)
+              ->where('type', '=', 'female15');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female10gonka');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female75sprint');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female125mass');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'female15gonka');
+            })
+            ->
+    groupBy('name','country','position')->
+    orderBy('country','asc')->
+    orderBy('position','asc')->
+    get();
+    $view->resultsCountry = $resultsCountry;
+    return $view;
+});
+
+Route::get('/statistics/cupOfTheWorld/maleOne', function () {
+    $view = view('statisticsTable');
+    $results = DB::table('cup_of_the_world')->
+    select( 'name', 'position',  DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position',1)
+              ->where('type', '=', 'male20');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male10sprint');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male125gonka');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male15mass');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'male20gonka');
+            })
+            ->
+    groupBy('name','position')->
+    orderBy('position','asc')->
+    orderBy('countPos','desc')->
+    get();
+    $view->results = $results;
+
+    $resultsCountry = DB::table('cup_of_the_world')->
+    select('name', 'position','country', DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position', '<=', 3)
+              ->where('type', '=', 'male20');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male10sprint');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male125gonka');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male15mass');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position', '<=', 3)
+                ->where('type', '=', 'male20gonka');
+            })
+            ->
+    groupBy('name','country','position')->
+    orderBy('name','asc')->
+    orderBy('position','asc')->
+    get();
+    $view->resultsCountry = $resultsCountry;
+    return $view;
+});
+
+Route::get('/statistics/cupOfTheWorld/mix', function () {
+    $view = view('statisticsTable');
+    $results = DB::table('cup_of_the_world')->
+    select('country', 'position',  DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position',1)
+              ->where('type', '=', 'doebleEs');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'oneEs');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position',1)
+                ->where('type', '=', 'doubleEs');
+            })
+            ->
+    groupBy('country','position')->
+    orderBy('position','asc')->
+    orderBy('countPos','desc')->
+    get();
+    $view->results = $results;
+
+    $resultsCountry = DB::table('cup_of_the_world')->
+    select('country', 'position', DB::raw('COUNT(cup_of_the_world.position) as countPos'))->
+    where(function ($query) {
+        $query->where('position','<=' ,3)
+              ->where('type', '=', 'doebleEs');
+    }) ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'oneEs');
+            })
+            ->
+            orWhere(function ($query) {
+                $query->where('position','<=' ,3)
+                ->where('type', '=', 'doubleEs');
+            })
+            ->
+    groupBy('country','position')->
+    orderBy('country','asc')->
+    orderBy('position','asc')->
+    get();
+    $view->resultsCountry = $resultsCountry;
+    return $view;
+});
