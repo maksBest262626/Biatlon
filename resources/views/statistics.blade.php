@@ -69,18 +69,28 @@ Results
       <div class="col">
           
             <br> <br> <br>
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/all' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Мужчины + женщины)
+            </a></div>
+            <br>
+
             <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/male' class='btn btn-primary' align=center>
             Медальный зачёт стран (Только мужчины)
             </a></div>
             <br>
             
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/maleOne' class='btn btn-primary' align=center>
+            Медальный зачёт спортсменов (Только мужчины на индивидуальных соревнованиях)
+            </a></div>
+            <br>
+
             <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/female' class='btn btn-primary' align=center>
             Медальный зачёт стран (Только женщины)
             </a></div>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/all' class='btn btn-primary' align=center>
-            Медальный зачёт стран (Мужчины + женщины)
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/femaleOne' class='btn btn-primary' align=center>
+            Медальный зачёт спортсменов (Только женщины на индивидуальных соревнованиях)
             </a></div>
             <br>
 
@@ -88,15 +98,9 @@ Results
             Медальный зачёт стран (Смешанные команды)
             </a></div>
             <br>
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/maleOne' class='btn btn-primary' align=center>
-            Медальный зачёт спортсменов (Только мужчины на индивидуальных соревнованиях)
-            </a></div>
-            <br>
             
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/femaleOne' class='btn btn-primary' align=center>
-            Медальный зачёт спортсменов (Только женщины на индивидуальных соревнованиях)
-            </a></div>
-            <br>
+            
+            
           }
 
         
