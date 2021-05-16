@@ -110,25 +110,95 @@ Results
     </div>
 @endif
 
+@if(Request::is('statistics/championatOfTheWorld')) 
+<br>
+<div class="row row-cols-1 row-cols-md-1 mb-2 text-center">
+      <div class="col">
+          
+            <br> <br> <br>
+            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/all' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Мужчины + женщины)
+            </a></div>
+            <br>
+
+            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/male' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Только мужчины)
+            </a></div>
+            <br>
+            
+            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/maleOne' class='btn btn-primary' align=center>
+            Медальный зачёт спортсменов (Только мужчины на индивидуальных соревнованиях)
+            </a></div>
+            <br>
+
+            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/female' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Только женщины)
+            </a></div>
+            <br>
+
+            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/femaleOne' class='btn btn-primary' align=center>
+            Медальный зачёт спортсменов (Только женщины на индивидуальных соревнованиях)
+            </a></div>
+            <br>
+
+            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/mix' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Смешанные команды)
+            </a></div>
+            <br>
+            
+            
+            
+          }
+
+        
+        
+      </div>
+      
+    </div>
+@endif
+
 @if(Request::is('statistics/cupOfIBU')) 
 <br>
 <div class="row row-cols-1 row-cols-md-1 mb-2 text-center">
       <div class="col">
           
-          <?php
-          $etaps = DB::table('cup_of_the_IBU')->select('etap')->distinct()->get();
-          $count = 0;
-          foreach ($etaps as $etap) {$count++;}
-         
-          for($i=0; $i<$count;$i++){
-            echo "
-            <br>
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/{$etaps[$i]->etap}' class='btn btn-primary' align=center>
-              этап {$etaps[$i]->etap}
+            <br> <br> <br>
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/all' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Мужчины + женщины)
             </a></div>
-            <br>";
+            <br>
+
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/male' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Только мужчины)
+            </a></div>
+            <br>
+            
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/maleOne' class='btn btn-primary' align=center>
+            Медальный зачёт спортсменов (Только мужчины на индивидуальных соревнованиях)
+            </a></div>
+            <br>
+
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/female' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Только женщины)
+            </a></div>
+            <br>
+
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/femaleOne' class='btn btn-primary' align=center>
+            Медальный зачёт спортсменов (Только женщины на индивидуальных соревнованиях)
+            </a></div>
+            <br>
+
+            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/mix' class='btn btn-primary' align=center>
+            Медальный зачёт стран (Смешанные команды)
+            </a></div>
+            <br>
+            
+            
+            
           }
-          ?>
+
+        
+        
       </div>
       
     </div>

@@ -6,7 +6,7 @@ Results1
 @endsection 
 
 @section('content')           <!-- /* вставляем наш код который ниже в секцию контент(которая в апп есть ес что) */ -->   
-@if(Request::is('statistics/cupOfTheWorld/femaleOne') || Request::is('statistics/cupOfTheWorld/maleOne') )  
+@if(Request::is('statistics/cupOfTheWorld/femaleOne') || Request::is('statistics/cupOfTheWorld/maleOne') || Request::is('statistics/championatOfTheWorld/femaleOne') || Request::is('statistics/championatOfTheWorld/maleOne')  || Request::is('statistics/cupOfIBU/femaleOne') || Request::is('statistics/cupOfIBU/maleOne') )  
 <br>
 <table class="table table-hover">
   <thead>
@@ -45,26 +45,38 @@ Results1
               $medal = $medal + $resultC->countPos ;
               $mesto++;
             } elseif (($result->name==$resultC->name)AND ($resultC->position == $mesto+1)) {
-              // echo "
-              //     <td>0</td>
-              //     <td>{$resultC->countPos}</td>
-              // ";
-              // $medal = $medal + $resultC->countPos ;
-              // $mesto++;
+              echo "
+                  <td>0</td>
+                  <td>{$resultC->countPos}</td>
+              ";
+              $medal = $medal + $resultC->countPos ;
+              $mesto++;
+              $mesto++;
             } elseif ((2 == $mesto)) {
               echo "
                   <td>0</td>
-                  <td>0</td>
               ";
               $mesto++;
+            }
+            elseif ((3 == $mesto)) {
+              echo "
+                  <td>0</td>
+              ";
               $mesto++;
             }
           }
         
+          if(2 == $mesto){
+            echo "
+            <td>0</td>
+            ";
+            $mesto++;
+          }
           if(3 == $mesto){
             echo "
             <td>0</td>
             ";
+            $mesto++;
           }
       echo "
       <td>{$medal}</td>
@@ -106,21 +118,38 @@ Results1
               ";
               $medal = $medal + $resultC->countPos ;
               $mesto++;
-            } elseif (($result->country==$resultC->country)AND ($resultC->position == $mesto+1)) {
+            }  elseif (($result->country==$resultC->country)AND ($resultC->position == $mesto+1)) {
               echo "
                   <td>0</td>
                   <td>{$resultC->countPos}</td>
               ";
               $medal = $medal + $resultC->countPos ;
               $mesto++;
+              $mesto++;
+            } elseif (3 == $mesto) {
+              echo "
+            <td>0</td>
+            ";
+            $mesto++;
             } elseif ((2 == $mesto)) {
               echo "
-                  <td>0</td>
                   <td>0</td>
               ";
               $mesto++;
             }
            
+          }
+          if(2 == $mesto){
+            echo "
+            <td>0</td>
+            ";
+            $mesto++;
+          } 
+          if (3 == $mesto){
+            echo "
+            <td>0</td>
+            ";
+            $mesto++;
           }
       echo "
       <td>{$medal}</td>
