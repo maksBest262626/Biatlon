@@ -9,6 +9,7 @@
     <a class="py-2 d-none d-md-inline-block" href="/statistics">Статистика</a>
     <a class="py-2 d-none d-md-inline-block" href="/about">О биатлоне</a>
     <a class="py-2 d-none d-md-inline-block" href="/about">                                 </a>
-    <a class="py-2 d-none d-md-inline-block" href="/">Выход</a>
+    <a class="py-2 d-none d-md-inline-block" href="/exit"">Выход</a>
+    
   </nav>
 </header>

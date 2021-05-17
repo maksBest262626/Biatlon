@@ -6,9 +6,14 @@ Results1
 @endsection 
 
 @section('content')           <!-- /* вставляем наш код который ниже в секцию контент(которая в апп есть ес что) */ -->   
-<div class="row row-cols-1 row-cols-md-1 mb-2 text-center">
-      <div class="col">
-          
+<br>
+<div class="row justify-content-center">
+<div class="col-4"> 
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" align="center">Типы Соревнований</h4>
+      </div>
+      <div class="card-body">
           <?php
                    
           foreach ($types as $type) {
@@ -36,15 +41,19 @@ Results1
             if ($type->type == "male20oneGonka")  { $russian = "Мужчины. Индивидуальная гонка на 20 км."; }  
             echo "
             <br>
-            <div class='container text-center' align='center' ><a href='/results/championatOfTheWorld/{$type->type}' class='btn btn-primary' align=center>
+            <form action = '/results/championatOfTheWorld/{$type->type}' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
               {$russian}
-            </a></div>
+            </button>
+            </form>
             <br><br>";
           }
           ?>
 
         
-        
       </div>
     </div>
+  </div> 
+</div>
+<br><br>
 @endsection            
