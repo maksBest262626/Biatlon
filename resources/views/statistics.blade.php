@@ -19,7 +19,7 @@ Results
               <li>Дата следующего кубка: 27.11.2021-20.03.2022</li>
               <li>Место проведения: Финляндия</li>
               <li>Количество этапов: 10</li>
-            </ul>
+            </ul><br><br>
             <form action="/statistics/cupOfTheWorld" method="get">
             <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Посмотреть медальный зачет</button>
             </form>
@@ -65,143 +65,182 @@ Results
 
 @if(Request::is('statistics/cupOfTheWorld')) 
 <br>
-<div class="row row-cols-1 row-cols-md-1 mb-2 text-center">
-      <div class="col">
+<div class="row justify-content-center">
+<div class="col-4"> 
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" align="center">Медальный зачёт</h4>
+      </div>
+      <div class="card-body">
           
-            <br> <br> <br>
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/all' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfTheWorld/all' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Мужчины + женщины)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/male' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfTheWorld/male' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Только мужчины)
-            </a></div>
+            </button>
+            </form>
             <br>
             
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/maleOne' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfTheWorld/maleOne' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт спортсменов (Только мужчины на индивидуальных соревнованиях)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/female' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfTheWorld/female' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Только женщины)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/femaleOne' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfTheWorld/femaleOne' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт спортсменов (Только женщины на индивидуальных соревнованиях)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfTheWorld/mix' class='btn btn-primary' align=center>
+            
+            <form action = '/statistics/cupOfTheWorld/mix' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Смешанные команды)
-            </a></div>
-            <br>
-            
-            
-            
-          }
-
-        
+            </button>
+            </form>
+            <br>        
         
       </div>
-      
     </div>
+  </div> 
+</div>
+<br><br>
 @endif
 
 @if(Request::is('statistics/championatOfTheWorld')) 
 <br>
-<div class="row row-cols-1 row-cols-md-1 mb-2 text-center">
-      <div class="col">
+<div class="row justify-content-center">
+<div class="col-4"> 
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" align="center">Медальный зачёт</h4>
+      </div>
+      <div class="card-body">
           
-            <br> <br> <br>
-            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/all' class='btn btn-primary' align=center>
+            <form action = '/statistics/championatOfTheWorld/all' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Мужчины + женщины)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/male' class='btn btn-primary' align=center>
+            <form action = '/statistics/championatOfTheWorld/male' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Только мужчины)
-            </a></div>
+            </button>
+            </form>
             <br>
             
-            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/maleOne' class='btn btn-primary' align=center>
+            <form action = '/statistics/championatOfTheWorld/maleOne' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт спортсменов (Только мужчины на индивидуальных соревнованиях)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/female' class='btn btn-primary' align=center>
+            <form action = '/statistics/championatOfTheWorld/female' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Только женщины)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/femaleOne' class='btn btn-primary' align=center>
+            <form action = '/statistics/championatOfTheWorld/femaleOne' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт спортсменов (Только женщины на индивидуальных соревнованиях)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/championatOfTheWorld/mix' class='btn btn-primary' align=center>
+            
+            <form action = '/statistics/championatOfTheWorld/mix' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Смешанные команды)
-            </a></div>
-            <br>
-            
-            
-            
-          }
-
-        
+            </button>
+            </form>
+            <br>        
         
       </div>
-      
     </div>
+  </div> 
+</div>
+<br><br>
 @endif
 
 @if(Request::is('statistics/cupOfIBU')) 
 <br>
-<div class="row row-cols-1 row-cols-md-1 mb-2 text-center">
-      <div class="col">
+<div class="row justify-content-center">
+<div class="col-4"> 
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" align="center">Медальный зачёт</h4>
+      </div>
+      <div class="card-body">
           
-            <br> <br> <br>
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/all' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfIBU/all' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Мужчины + женщины)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/male' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfIBU/male' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Только мужчины)
-            </a></div>
+            </button>
+            </form>
             <br>
             
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/maleOne' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfIBU/maleOne' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт спортсменов (Только мужчины на индивидуальных соревнованиях)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/female' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfIBU/female' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Только женщины)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/femaleOne' class='btn btn-primary' align=center>
+            <form action = '/statistics/cupOfIBU/femaleOne' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт спортсменов (Только женщины на индивидуальных соревнованиях)
-            </a></div>
+            </button>
+            </form>
             <br>
 
-            <div class='container text-center' align='center' ><a href='/statistics/cupOfIBU/mix' class='btn btn-primary' align=center>
+            
+            <form action = '/statistics/cupOfIBU/mix' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
             Медальный зачёт стран (Смешанные команды)
-            </a></div>
-            <br>
-            
-            
-            
-          }
-
-        
+            </button>
+            </form>
+            <br>        
         
       </div>
-      
     </div>
+  </div> 
+</div>
+<br><br>
 @endif
 
 @endsection                   <!-- /* закрываем секцию */ -->

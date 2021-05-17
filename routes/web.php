@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/exit', function () {
+    return view('exit');
+})->name('exit');
+
 Route::get('/about', function () {
     return view('about');
 })->name('about');

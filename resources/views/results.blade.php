@@ -19,7 +19,7 @@ Results
               <li>Дата следующего кубка: 27.11.2021-20.03.2022</li>
               <li>Место проведения: Финляндия</li>
               <li>Количество этапов: 10</li>
-            </ul>
+            </ul><br><br>
             <form action="/results/cupOfTheWorld" method="get">
             <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Посмотреть результаты</button>
             </form>
@@ -61,13 +61,18 @@ Results
         </div>
       </div>
     </div>
+    <br><br>
 @endif
 
 @if(Request::is('results/cupOfTheWorld')) 
 <br>
-<div class="row row-cols-1 row-cols-md-2 mb-2 text-center">
-      <div class="col">
-          
+<div class="row justify-content-center">
+<div class="col-4"> 
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" align="center">Этапы 1-5</h4>
+      </div>
+      <div class="card-body">
           <?php
           $etaps = DB::table('cup_of_the_world')->select('etap')->distinct()->get();
           $count = 0;
@@ -76,20 +81,25 @@ Results
           for($i=0; $i<$count;$i++){
             echo "
             <br>
-            <div class='container text-center' align='center' ><a href='/results/cupOfTheWorld/{$etaps[$i]->etap}' class='btn btn-primary' align=center>
-              этап {$etaps[$i]->etap}
-            </a></div>
+            <form action = '/results/cupOfTheWorld/{$etaps[$i]->etap}' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
+              Этап {$etaps[$i]->etap}
+            </button>
+            </form>
             <br>";
           }
           ?>
-
-        
-        
+           
       </div>
-      <div class="col">
-        
-        
-        <?php
+    </div>
+  </div> 
+      <div class="col-4">    
+       <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" align="center">Этапы 6-10</h4>
+          </div>
+          <div class="card-body">
+          <?php
           $etaps = DB::table('cup_of_the_world')->select('etap')->distinct()->get();
           $count = 0;
           foreach ($etaps as $etap) {$count++;}
@@ -97,23 +107,32 @@ Results
           for($i=$count; $i<$count*2;$i++){
             echo "
             <br>
-            <div><a href='/results/cupOfTheWorld/{$etaps[$i]->etap}' class='btn btn-primary' align=center>
-              этап {$etaps[$i]->etap}
-            </a></div>
+            <form action = '/results/cupOfTheWorld/{$etaps[$i]->etap}' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
+              Этап {$etaps[$i]->etap}
+            </button>
+            </form>
             <br>";
           }
           ?>
-        
-        
+           
+        </div>
+        </div>
+      </div> 
       </div>
-    </div>
+    </div>    
+    <br><br>  
 @endif
 
 @if(Request::is('results/cupOfIBU')) 
-<br>
-<div class="row row-cols-1 row-cols-md-1 mb-2 text-center">
-      <div class="col">
-          
+    <br>
+<div class="row justify-content-center">
+  <div class="col-4">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+            <h4 class="my-0 fw-normal" align="center">Этапы</h4>
+      </div>
+      <div class="card-body">
           <?php
           $etaps = DB::table('cup_of_the_IBU')->select('etap')->distinct()->get();
           $count = 0;
@@ -122,15 +141,20 @@ Results
           for($i=0; $i<$count;$i++){
             echo "
             <br>
-            <div class='container text-center' align='center' ><a href='/results/cupOfIBU/{$etaps[$i]->etap}' class='btn btn-primary' align=center>
-              этап {$etaps[$i]->etap}
-            </a></div>
+            <form action = '/results/cupOfIBU/{$etaps[$i]->etap}' method='get'>
+            <button type=submit class='w-100 btn btn-lg btn-outline-primary'>
+              Этап {$etaps[$i]->etap}
+            </button>
+            </form>
             <br>";
           }
           ?>
+           
       </div>
-      
     </div>
+  </div>   
+</div>
+<br><br>
 @endif
 
 @endsection                   <!-- /* закрываем секцию */ -->
