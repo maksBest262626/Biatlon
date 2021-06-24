@@ -12,12 +12,12 @@
 
 [Miro](https://miro.com/app/board/o9J_lOIZzk4=/)
 
-<h2>Ссылки на документы:</h2>
+<h2>Иные ссылки:</h2>
 <ul>
 	<li><a href="https://github.com/maksBest262626/Biatlon/blob/main/Documents/Tekhnicheskoe_zadanie.pdf">Техническое задание</a></li>
     <li><a href="https://github.com/maksBest262626/Biatlon/blob/main/Documents/Kursovoy_proekt.pdf">Курсовой проект</a></li>
     <li><a href="https://github.com/maksBest262626/Biatlon/blob/main/Documents/biatlon.pptx">Презентация</a></li>
     <li><a href="https://drive.google.com/file/d/12Xf-TwDUPQVAMdDBvFhZ3OlBB5MX1N_m/view">Демо-Видео</a></li>
     <li><a href="https://biathloncompetitionstatistic.ru/">Сайт</a></li>
-    
+    <li><a href="https://metrika.yandex.ru/dashboard?group=day&period=week&id=81866380">Яндекс.Метрика</a></li>
 </ul>
