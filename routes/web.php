@@ -37,6 +37,10 @@ Route::get('/results/cupOfTheWorld', function () {
     return view('results');
 });
 
+Route::get('/anna', function () {
+    return view('anna');
+});
+
 Route::get('/results/cupOfTheWorld/{id}', function($id) {
     $view = view('resultsType');
     $view->etap = $id;
